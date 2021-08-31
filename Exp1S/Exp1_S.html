@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Study of sampling theorem, effect of undersampling</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/adi.css">
+    <link rel="stylesheet" href="./css/adik.css">
+    <!--
+    This HTML file is designed and developed by
+    Aditya Kameswara Rao Nandula
+    Senior Research Fellow,
+    Virtual Labs IIT Kharagpur.
+    Email: akraonandula@gmail.com
+  -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71919978-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-71919978-6');
+</script>
+  </head>
+  <body>
+    <div class="container ce">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <header>
+              <div class="row ce ">
+                <div class="col-sm-3 "> <img src="./images/vlabs.png" class="pi1"
+                    alt="VLabs Logo">
+                  </div>
+                <div class="col-sm-6  tex">
+                  <p><strong> Virtual Labs <br>
+                      IIT Kharagpur</strong></p>
+                </div>
+                <div class="col-sm-3 ">
+                   <img src="./images/iitkgp.png" class="pi2" alt="IIT Kharagpur Logo">
+                </div>
+              </div>
+
+              <hr>
+              <div class="row">
+                <div class="col-sm-12">
+                    <h3>Study of sampling theorem, effect of undersampling</h3>
+                </div>
+              </div>
+              <hr>
+            </header>
+          </div>
+        </div>
+        <div class="container ce">
+          <div class="row bg-secondary text-white p-3 my-3">
+            <div id="qqd" class="col-sm-3"></div>
+            <div class="col-sm-6"></div>
+            <!--<div  id="qqsc" class="col-sm-3"></div>-->
+            <div id="qqt" class="col-sm-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="container" id="cont">
+        <div class="row Insta ce">
+        <div class="col-sm-12">
+          <div class"container Inst">
+            <ol class="se">
+              <p class="ce Inst"><strong> Instructions</p> </strong>
+              <li class="se">Observe the block diagram </li>
+              <li class="se">Select the Amplitide(A) of the input sine wave signal(x(t)).</li>
+              <li class="se">Select the frequency of the signal(f<sub>m</sub>) for the input signal(x(t)).</li>
+              <li class="se">Select the sampling frequency of the signal(f<sub>s</sub>).</li>
+              <li class="se">Select the "Channel 1" to observe the input signal x(t) on graph</li>
+              <li class="se">Select the "Channel 2" to observe the sampled output signal y(n) on graph</li>
+              <li class="se">Select the "Dual" to observe the input signal and  output signal on graph</li>
+              <li class="se">Change the values of A, f<sub>m</sub>, and f<sub>s</sub> to observe the variation in the input and output signals.</li>
+              <li>Hover on the graph to observe the value of the x(t) and y(n) at that instatnt of time T.</li>
+              <li>Save the graph if you are done with your experiment.</li>
+              <li><strong>
+                Note:
+                <ul>
+                  <li>Make sure always input signal amplitude(A) >0 v  </li>
+                  <li>Make sure always input signal frequency(f<sub>m</sub> and f<sub>s</sub>) >0 Hz  </li>
+                  <li>To change the values just scroll by hovering on it.</li>
+                </ul>
+                </strong>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+            <div class="row Insta ce">
+                <div class="col-sm-12">
+                  <div class="container">
+                  <p class="ce"><b>Block Daigram</b></p>
+                      <div class="container blkc">
+                        <br>
+                        <div class="blk" id="b1"> <b>Signal <br> Generator</b>
+                        </div>
+                        <div class="blk" id="b3"> <b>Virtual <br> Scope </b>
+                        </div>
+                        <div class="blk" id="b2"> <b>Sampling <br> Block
+                        </div>
+                        <br>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            <br>
+            <div class="row Inst" id="pw">
+              <div class="col-md-6">
+                <div class="custom-control custom-switch ce">
+                  <h5><strong>Power</strong></h5>
+                  <input type="checkbox" class="custom-control-input" id="s1">
+                  <label class="custom-control-label" for="s1" style="background:red;" id="sn">Circuit OFF</label>
+                </div>
+              </div>
+              <div class="col-md-6 ce" id="pa">
+                <button id="pab" type="button" class="btn btn-primary" data-toggle="modal" data-target="#parm"> Parameters </button>
+
+                  <!-- The Modal -->
+                  <div class="modal fade" id="parm">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                             <div class="modal-header">
+                         <h4 class="modal-title">Parameters</h4>
+                         <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       </div>
+
+                           <!-- Modal body -->
+                          <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6" id="Eq">
+                                   <ul class="eq">
+                                     <li class="eq">\(V_{rms}=\frac{V_m}{2}= \) <span id="vrms"></span> v</li>
+                                     <li class="eq">\(V_{dc}=\frac{V_m}{\pi}= \) <span id="vdc"></span> v</li>
+                                     <li class="eq">\(V_{ac}=\sqrt{{V_{rms}}^2-{V_{dc}}^2}= \) <span id="vac"></span> v</li>
+                                   </ul>
+                                </div>
+                                <div class=" col-md-6" id="Eq">
+                                   <ul class="eq">
+                                     <li class="eq"><strong> Ripple factor</strong> &nbsp; \(r=\frac{V_{ac}}{V_{dc}}= \) <span id="rf"> </span></li>
+                                     <li class="eq"><strong> Efficiency</strong> &nbsp; \(\eta=\frac{{P_{dc}}}{{P_{ac}}}*100= \) <span id="effe"> </span> %</li>
+                                   </ul>
+                                </div>
+                            </div>
+                          </div>
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                   </div>
+
+                        </div>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+            <div class="row Inst">
+              <div class="col-sm-12" id="grp">
+                  <div class="pic" id="grph"> </div>
+              </div>
+            </div>
+            <div class="row fc" id="ctl">
+              <div class="col-sm-3 ">
+                <div class="fc ce">
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <h6>Function Generator Controls</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <input class="preset1" type="range" min="0" max="10" value="1" data-width="80" data-height="80" data-angleOffset="220"
+                        data-angleRange="280" id="av">
+                        <br>
+                        <h6>V<sub>i</sub> = <span id="vi"></span> V </h6>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <input class="preset1 ce" type="range" min="0" max="10" step="1" data-width="80" data-height="80" data-angleOffset="220"
+                      data-angleRange="280" id="fv">
+                      <br>
+                        <h6>f<sub>m</sub> = <span id="f"></span> kHz</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-6">
+                      <input class="preset1 ce" type="range" min="0" max="20" step="2" data-width="80" data-height="80" data-angleOffset="220"
+                      data-angleRange="280" id="fsv">
+                      <br>
+                        <h6>f<sub>s</sub> = <span id="fs"></span> kHz</h6>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-9 fc ce">
+                <div class="row">
+                  <div class="col-sm-12">
+                      <h6>Oscilloscope Controls</h6>
+                  </div>
+                </div>
+                <div class="row ce">
+                  <div class="col-sm-3">
+                  </div>
+                  <div class="col-sm-2 ce">
+                    <button type="button" class="btn btn-primary btn-sm" id="bc1"> <strong>Channel 1</strong></button>
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary btn-sm" id="bc2"> <strong>Channel 2</strong></button>
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary btn-sm" id="du"> <strong>Dual</strong></button>
+                  </div>
+                  <div class="col-sm-3">
+                  </div>
+                </div>
+                <div class="row fc ce">
+                  <div class="col-12 col-sm-6 ce fc">
+                      <h6>Channel 1</h6>
+                      <div class="row">
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                        <div class="col-12 col-sm-4">
+                          <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="vc1v">
+                          <br>
+                          <h6>V<sub>c1</sub> = <span id="vc1"></span> V/div </h6>
+                        </div>
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                        <div class="col-12 col-sm-5">
+                          <input class="preset1" type="range" min="1" max="10" step="1" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="t1v">
+                          <br>
+                          <h6>Time = <span id="t1"></span> (ms)/div </h6>
+                        </div>
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <h6>Position</h6>
+                        </div>
+                      </div>
+                      <div class="row ce">
+                        <div class="col-12 col-sm-2">
+
+                        </div>
+                        <div class="col-12 col-sm-3">
+                          <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="px1v">
+                          <br>
+                          <h6>P<sub>X</sub> = <span id="px1"></span> </h6>
+                        </div>
+                        <div class="col-12 col-sm-2">
+
+                        </div>
+                          <div class="col-12 col-sm-3">
+                            <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="py1v">
+                            <br>
+                            <h6>P<sub>Y</sub> = <span id="py1"></span></h6>
+                          </div>
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-12 col-sm-6 ce fc">
+                      <h6>Channel 2</h6>
+                      <div class="row">
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                        <div class="col-12 col-sm-4">
+                          <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="vc2v">
+                          <br>
+                          <h6>V<sub>c2</sub> = <span id="vc2"></span> V/div </h6>
+                        </div>
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                        <div class="col-12 col-sm-5">
+                          <input class="preset1" type="range" min="1" max="10" step="1" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="t2v">
+                          <br>
+                          <h6>Time = <span id="t2"></span> (ms)/div </h6>
+                        </div>
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <h6>Position</h6>
+                        </div>
+                      </div>
+                      <div class="row ce">
+                        <div class="col-12 col-sm-2">
+
+                        </div>
+                        <div class="col-12 col-sm-3">
+                          <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="px2v">
+                          <br>
+                          <h6>P<sub>X</sub> = <span id="px2"></span> </h6>
+                        </div>
+                        <div class="col-12 col-sm-2">
+                        </div>
+                        <div class="col-12 col-sm-3">
+                          <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="py2v">
+                          <br>
+                          <h6>P<sub>Y</sub> = <span id="py2"></span> </h6>
+                        </div>
+                        <div class="col-12 col-sm-2">
+
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+              </div>
+            </div>
+      </div>
+
+      <div class="container ce">
+        <div class="row">
+          <div class="col-sm-12"> &nbsp; </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="jumbotron  ce">
+          <footer>
+            <div class="row ce">
+              <div class="col-sm-12">
+                <p><i> Copyright ©2021 Virtual labs IIT Kharagpur</i><br>
+                <a href="../../license/index.html" target="_blank"> Licensing Terms </a></p>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+
+    </div>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/plotly.js"></script>
+    <script src="./js/plain-draggable.js"></script>
+    <script src="./js/leaderline.min.js"></script>
+    <script src="./js/d3.v5.js"></script>
+    <script type="text/javascript" src="./js/dspex1s.js"></script>
+    <script type="text/javascript" src="./js/knob.js"></script>
+    <script type="text/javascript" src="./js/ui.js"></script>
+    <script type="text/javascript" src="./js/ui.el.js"></script>
+    <script type="text/javascript" src="./js/p1.js"></script>
+    <script type="text/javascript" src="./js/adik.js"></script>
+    <script type="text/javascript" src="./js/tex-chtml-full.js"> </script>
+          <svg>
+              <filter id="dropshadow" height="150%" width="150%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                  <feOffset dx="0" dy="3" result="offsetblur"/>
+                  <feMerge>
+                      <feMergeNode/>
+                      <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+              </filter>
+          </svg>
+  </body>
+</html>

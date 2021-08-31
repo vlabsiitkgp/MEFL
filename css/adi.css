@@ -1,0 +1,255 @@
+/*
+This Scrtpt file is developed by
+Aditya Kameswara Rao Nandula
+Senior Research Fellow,
+Virtual Labs IIT Kharagpur.
+Email: akraonandula@gmail.com
+
+*/
+body{
+  background: whitesmoke;
+  width:100%;
+  height:100%;
+  color:blue;
+}
+hr{
+  height: 3px;
+  border-width: 0px;
+  color: blue;
+  background-color: blue;
+}
+.form,.Inst,ol{
+  /*background: rgb(131, 143, 153);*/
+  border-color: rgb(238, 223, 253);
+  border-style: dotted;
+  border-radius: 5%;
+  border-width: 3px;
+  padding:1rem;
+  color:blue;
+  padding-left: 2rem;
+}
+.row1{
+  /*background: rgb(131, 143, 153,0.38);*/
+  border-color: rgb(238, 223, 253);
+  border-style: dotted;
+  border-radius: 5%;
+  border-width: 3px;
+  padding:.3rem;
+}
+.Inst{
+/*  background-color: rgb(131, 143, 153);*/
+}
+.jumbotron{
+  background: white;
+    height:50%;
+    padding:1rem;
+}
+@media screen and (min-width: 200px) {
+        .tex,h3{
+          color:blue;
+          font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+          font-size: 18px;
+          align-self: center;
+          align-items: center;
+          align-content: center;
+        }
+        .pi1{
+          border-radius: 2%;
+          width:50%;
+          height:45%;
+          align-self: center;
+          align-items: center;
+          align-content: center;
+        }
+        .pi2{
+            border-radius: 2%;
+            width:35%;
+            height:40%;
+            align-self: center;
+            align-items: center;
+            align-content: center;
+        }
+}
+@media screen and (min-width: 400px) {
+  .tex,h3{
+    color:blue;
+    font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }
+  .pi1{
+    border-radius: 2%;
+    width:80%;
+    height:75%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }
+  .pi2{
+      border-radius: 2%;
+      width:50%;
+      height:55%;
+      align-self: center;
+      align-items: center;
+      align-content: center;
+  }
+}
+
+@media screen and (min-width: 600px) {
+      .tex,h3{
+        color:blue;
+        font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+        font-size: 41px;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+      }
+      .pi1{
+        border-radius: 2%;
+        width:80%;
+        height:75%;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+      }
+      .pi2{
+          border-radius: 2%;
+          width:60%;
+          height:70%;
+          align-self: center;
+          align-items: center;
+          align-content: center;
+      }
+}
+
+.ce{
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.se:hover,li:hover,ol:hover{
+  background: rgb(173, 181, 189);
+  padding-left:2rem;
+  text-align: left;
+}
+.se{
+  text-align: left;
+}
+.eq:hover,ul:hover,ul.li:hover{
+  background: rgb(173, 181, 189);
+}
+#Eq,.eq,ul,ul.li{
+  text-align: left;
+  align-self: left;
+  align-items: left;
+  align-content: left;
+  text-align: left;
+}
+#Eq{
+  border-color: rgb(238, 223, 253);
+  border-style: dotted;
+  border-radius: 5%;
+  border-width: 3px;
+}
+.lf{
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: left;
+}
+.gr{
+  background: green;
+}
+header,footer{
+    border-radius: 3%;
+    border-width: 1px;
+}
+.pic{
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+button{
+  background: white;
+  border-radius: 50%;
+  color: blue;
+}
+
+.fc{
+  width:100;
+  height:100;
+  border-color: rgb(238, 223, 253);
+  border-style: dotted;
+  border-radius: 5%;
+  border-width: 3px;
+  padding:1rem;
+  color:blue;
+  padding-left: 1rem;
+}
+
+.blkc{
+  width:100%;
+  height:100%;
+  border-color: rgb(53, 53, 183);
+  border-style: dotted;
+  border-radius: 5%;
+  border-width: 3px;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.blk{
+  width:20%;
+  height:40%;
+  padding-top: 3px;
+  color:white;
+  background-color: rgb(53, 53, 183);
+  border-color: rgb(238, 223, 253);
+  border-style: dotted;
+  border-radius: 5%;
+  border-width: 3px;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+#b1{
+  position: relative;
+  left: 15%;
+  top:25%;
+}
+
+#b2{
+  position: relative;
+  left: 45%;
+}
+#b3{
+  position: relative;
+  left: 75%;
+}
+.pic1 {
+  width:75%;
+  height:auto;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.pic2 {
+  width:39%;
+  height:auto;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.hedng{
+  color:blue;
+  font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+  font-size: 200%;
+  text-align: center;
+}
