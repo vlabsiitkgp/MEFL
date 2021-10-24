@@ -4,17 +4,17 @@ var interval;
 (function ($) {
 
 	var copyRightHTML = '<div class="copyright">&copy; Tatikonda Sree Lakshmi, Research Engineer, VLabs IITKGP.</div>';
-	var slideshow_html = '<div><img src="images/1.jpg" data-fullscreen-image="images/1.jpg" /></div>'+
-				'<div><img src="images/2.jpg" data-fullscreen-image="images/2.jpg" /></div>'+
-				'<div><img src="images/3.jpg" data-fullscreen-image="images/3.jpg" /></div>';
+	var slideshow_html = '<div><img src="images/1.JPG" data-fullscreen-image="images/1.JPG" /></div>'+
+				'<div><img src="images/2.JPG" data-fullscreen-image="images/2.JPG" /></div>'+
+				'<div><img src="images/3.JPG" data-fullscreen-image="images/3.JPG" /></div>';
 	$("#footer").append(copyRightHTML);
 
 	$(document).on("click", "#cavitation", function () {
-		$(".graph-display").html('').html('<img src="images/cavitation.jpg" data-fullscreen-image="images/cavitation.jpg" />');
+		$(".graph-display").html('').html('<img src="images/cavitation.JPG" data-fullscreen-image="images/cavitation.JPG" />');
 	});
 
 	$(document).on("click", "#without-cavitation", function () {
-		$(".graph-display").html('').html('<img src="images/without cavitation.jpg" data-fullscreen-image="images/without cavitation.jpg" />');
+		$(".graph-display").html('').html('<img src="images/without cavitation.JPG" data-fullscreen-image="images/without cavitation.JPG" />');
 	});
 
 	$(document).on("click", "#slide-start", function () {
